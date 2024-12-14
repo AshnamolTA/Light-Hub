@@ -1,0 +1,84 @@
+{%extends 'base.html'%}
+
+{%block main-block%}
+
+
+<section>
+    <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+      <header class="text-center">
+        <h2 class="text-xl font-bold text-gray-900 sm:text-3xl">Products </h2>
+  
+        <!-- <p class="mx-auto mt-4 max-w-md text-gray-500">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque praesentium cumque iure
+          dicta incidunt est ipsam, officia dolor fugit natus?
+        </p> -->
+      </header>
+  
+      <ul class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        
+       {%for l in light%}
+
+           
+          
+                
+         <li>
+           <a href="" class="group block overflow-hidden">
+            
+                <img
+                  src="{{l.preview_image.url}}"
+                  alt=""
+                  class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[350px]"
+                /> 
+
+   
+
+             
+
+         <div class="relative bg-white pt-3">
+         <h3 class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
+          {{l.name}}
+          <!-- {%if p.category_object%}
+          {{p.category_object.name}}
+          
+          {%endif%} -->
+         </h3>
+
+         <p class="mt-2">
+          <span class="sr-only"> Regular Price </span>
+          {{l.description}}
+          
+            <!-- Explore from the wide range of high-quality energy efficient lamps and luminaires systems and services -->
+          
+          <span class="tracking-wider text-gray-900"> </span>
+         </p>
+         
+        <form class="mt-4 flex gap-4">
+
+          <a
+              href="{%url 'light_detail' l.id%}"
+              class="block bg-yellow-300 px-5 py-3 text-center text-xs font-bold uppercase text-gray-900 transition hover:bg-yellow-400"
+            >
+              View 
+            </a>
+    
+          
+        </form>
+        </div>
+          </a>
+         </li>
+ 
+
+          
+       {%endfor%}
+        
+  
+        
+  
+       
+      </ul>
+    </div>
+  </section>
+  
+
+
+{%endblock%}
