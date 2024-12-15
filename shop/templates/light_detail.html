@@ -3,10 +3,11 @@
 {%block main-block%}
 
 <div class="w-2/4 mx-auto">
-        <a href="{%url 'wishlist' l.id %}">Wishlist</a>
+            <a href="{%url 'wishlist' data.id %}">wishlist</a>
+        
     <a href="#" class="group relative block overflow-hidden">
         <button
-        <!-- onclick=location.href="{%url 'wishlist' l.id %}" -->
+        
           class="absolute end-4 top-4 z-10 rounded-full bg-white p-1.5 text-gray-900 transition hover:text-gray-900/75"
         >
           <span class="sr-only">Wishlist</span>
@@ -44,14 +45,40 @@
           <p class="mt-1.5 line-clamp-3 text-gray-700">
             {{data.description}}
           </p>
+
+          <div >
+            <label for="HeadlineAct" class="block text-sm font-medium text-gray-900"> {{data.shape_object.all}} </label>
+          
+            <select
+              name="HeadlineAct"
+              id="HeadlineAct"
+              class="mt-1.5  rounded-lg border-gray-300 text-gray-700 sm:text-sm"
+            >
+              <option value="">Please select</option>
+              <option value="JM">John Mayer</option>
+              <option value="SRV">Stevie Ray Vaughn</option>
+              <option value="JH">Jimi Hendrix</option>
+              <option value="BBK">B.B King</option>
+              <option value="AK">Albert King</option>
+              <option value="BG">Buddy Guy</option>
+              <option value="EC">Eric Clapton</option>
+            </select>
+          </div>
+          
+  
+                     
+          
           
     
       
           <form class="mt-4 flex gap-4">
-            <button
+            <button onclick=location.href="{%url 'wishlist' data.id %}"
+
+            
               class="block w-full rounded bg-gray-100 px-4 py-3 text-sm font-medium text-gray-900 transition hover:scale-105"
             >
               Add to Cart
+            
             </button>
       
             <button

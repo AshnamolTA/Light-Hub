@@ -15,7 +15,7 @@ from shop.forms import SignUpForm,SignInForm,UserProfileForm
 
 from shop import views
 
-from shop.models import Light,UserProfile,Category,WishList,WishListItem
+from shop.models import Light,UserProfile,Category,WishListItem
 
 
 class SignUpView(View):
