@@ -137,6 +137,7 @@ class CategoryDetailView(TemplateView):
         id=kwargs.get("pk")
 
         qs=Category.objects.get(id=id)
+        light=qs.light_set.all()
 
         return render(request,self.template_name,{"category":qs})
     
