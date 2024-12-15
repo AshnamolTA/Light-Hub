@@ -46,26 +46,126 @@
             {{data.description}}
           </p>
 
-          <div >
-            <label for="HeadlineAct" class="block text-sm font-medium text-gray-900"> {{data.shape_object.all}} </label>
-          
-            <select
-              name="HeadlineAct"
-              id="HeadlineAct"
-              class="mt-1.5  rounded-lg border-gray-300 text-gray-700 sm:text-sm"
-            >
-              <option value="">Please select</option>
-              <option value="JM">John Mayer</option>
-              <option value="SRV">Stevie Ray Vaughn</option>
-              <option value="JH">Jimi Hendrix</option>
-              <option value="BBK">B.B King</option>
-              <option value="AK">Albert King</option>
-              <option value="BG">Buddy Guy</option>
-              <option value="EC">Eric Clapton</option>
-            </select>
+          <!-- select -->
+
+          <div class="mr-auto flex items-center">
+            <span class="mr-3 text-sm font-semibold">Shape</span>
+            <div class="relative">
+
+              <select name="size" class="appearance-none rounded border border-gray-300 py-2 pl-3 pr-10 text-sm focus:border-black focus:outline-none focus:ring-2 focus:ring-black">
+                
+                {% for opt in data.shape_object.all %}
+
+                  <option value="{{opt.name}}">{{opt.name}}</option>
+                
+                {% endfor %}
+
+              </select>
+              <span class="pointer-events-none absolute right-0 top-0 flex h-full w-10 items-center justify-center text-center text-gray-600">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-chevron-down"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </span>
+            </div>
           </div>
+
           
-  
+
+          <!-- bb -->
+          <div class="mr-auto flex items-center">
+            <span class="mr-3 text-sm font-semibold">Colour</span>
+            <div class="relative">
+
+              <select name="size" class="appearance-none rounded border border-gray-300 py-2 pl-3 pr-10 text-sm focus:border-black focus:outline-none focus:ring-2 focus:ring-black">
+                
+                {% for opt in data.colour_object.all %}
+
+                  <option value="{{opt.name}}">{{opt.colour}}</option>
+                
+                {% endfor %}
+
+              </select>
+              <span class="pointer-events-none absolute right-0 top-0 flex h-full w-10 items-center justify-center text-center text-gray-600">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-chevron-down"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </span>
+            </div>
+          </div>
+
+          <!-- body -->
+
+          <div class="mr-auto flex items-center">
+            <span class="mr-3 text-sm font-semibold">Light Body Colour</span>
+            <div class="relative">
+
+              <select name="size" class="appearance-none rounded border border-gray-300 py-2 pl-3 pr-10 text-sm focus:border-black focus:outline-none focus:ring-2 focus:ring-black">
+                
+                {% for opt in data.body_object.all %}
+
+                  <option value="{{opt.name}}">{{opt.bodycolour}}</option>
+                
+                {% endfor %}
+
+              </select>
+              <span class="pointer-events-none absolute right-0 top-0 flex h-full w-10 items-center justify-center text-center text-gray-600">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-chevron-down"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </span>
+            </div>
+          </div>
+
+
+          <!-- /boooo -->
+
+          
+                    
+                  
+        
+                 
+        
+                  
+         </div>
+              </form>
+            
+
+          
+           
+          
                      
           
           
@@ -89,9 +189,10 @@
             </button>
           </form>
         </div>
+      </div>
       </a>
 </div>
-  
+</div> 
 
 
 {%endblock%}

@@ -15,7 +15,7 @@ from shop.forms import SignUpForm,SignInForm,UserProfileForm
 
 from shop import views
 
-from shop.models import Light,UserProfile,Category,WishListItem
+from shop.models import Light,UserProfile,Category,WishListItem,Shape
 
 
 class SignUpView(View):
@@ -136,7 +136,7 @@ class CategoryDetailView(TemplateView):
 
         id=kwargs.get("pk")
 
-        qs=Category.objects.filter(id=id)
+        qs=Category.objects.get(id=id)
 
         return render(request,self.template_name,{"category":qs})
     
@@ -175,11 +175,17 @@ class LightDetailView(View):
 
 class AddToWishlistItemView(View):
 
-    def get(self,request,*args,**kwargs):
+    def Post(self,request,*args,**kwargs):
 
         id=kwargs.get("pk")
 
         light_object=get_object_or_404(Light,id=id)
+
+        # shape_name=request.POST.get("name")
+        # shape_obj=Shape.objects.get(name=shape_name)
+
+        
+        
 
         request.user.basket.basket_item.create(light_object=light_object)
 

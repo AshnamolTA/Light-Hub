@@ -1,27 +1,27 @@
 {%extends 'base.html'%}
 
 {%block main-block%}
-{%for c in category%}
+
 
 
 
 <a href="" class="group relative block">
     <div class="relative h-[350px] sm:h-[450px]">
       <img
-        src="{{c.image.url}}"
+        src="{{category.image.url}}"
         alt=""
         class="absolute inset-0 h-full w-full  opacity-100 group-hover:opacity-10"
       />
   
       <img
-        src="{{c.image.url}}" 
+        src="{{category.image.url}}" 
         alt=""
         class="absolute inset-0 h-full w-full  opacity-0 group-hover:opacity-100"
       />
     </div>
   
     <div class="absolute inset-0 flex flex-col items-start justify-end p-6">
-      <h1 class="text-xl font-medium text-white">{{c.name}}</h1>
+      <h1 class="text-xl font-medium text-white">{{category.name}}</h1>
   
       <!-- <p class="mt-1.5 text-pretty text-xs text-white">
         Explore from the wide range of high-quality energy efficient lamps and luminaires systems and services
@@ -45,7 +45,7 @@
   <section>
       <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
         <header class="text-center">
-          <h2 class="text-xl font-bold text-gray-900 sm:text-3xl">Product Catalogue</h2>
+          <h2 class="text-xl font-bold text-gray-900 sm:text-3xl">Product </h2>
     
           <!-- <p class="mx-auto mt-4 max-w-md text-gray-500">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque praesentium cumque iure
@@ -55,7 +55,7 @@
     
         <ul class="mt-2 grid gap-6 sm:grid-cols-10 lg:grid-cols-4">
           
-          <!-- {%if c.light%} -->
+          <!-- {%if category.light%} -->
   
              
          
@@ -77,7 +77,7 @@
   
            <div class="relative bg-white pt-3">
            <h3 class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
-            <!-- {{p.light.name}} -->
+            <!-- {{category.light.name}} -->
             <!-- {%if p.category_object%}
             {{p.category_object.name}}
             
@@ -107,8 +107,8 @@
    
   
             
-          <!-- {%endif%} 
-           -->
+          <!-- {%endif%}  -->
+          
     
           
     
@@ -119,6 +119,6 @@
     
   
 
-{%endfor%}
+
 
 {%endblock%}
